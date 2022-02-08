@@ -6,7 +6,7 @@
 </div>
 <h2 align='center'>Simple weather app using HTML, CSS, and JavaScript</h2>
 <div align='center'>
-  <img align='center' src='https://github.com/tomascoe/weather-app/blob/main/assets/weather-app-screenshot.png'/>
+  <img align='center' src='https://github.com/tomascoe/weather-app/blob/main/assets/screenrecording.gif'/>
 </div>
 
 <br>

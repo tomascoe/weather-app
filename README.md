@@ -18,3 +18,8 @@
     <img src='https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white'/>
   </a>
 </div>
+<br>
+<p align='center'>
+  <a href="#"><img src="https://badges.pufler.dev/visits/tomascoe/weather-app"></a>
+</p>
+ 

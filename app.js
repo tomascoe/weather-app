@@ -22,6 +22,8 @@ let weaherApi = {
     document.querySelector(".temp-max").innerText = Math.floor(temp_max);
     document.querySelector(".temp-min").innerText = Math.floor(temp_min);
     document.querySelector(".humidity-data").innerText = humidity;
+    document.querySelector(".load-card").classList.remove("loading");
+    document.querySelector(".card").classList.remove("loading");
   },
 };
 

@@ -16,6 +16,7 @@ body {
   width: 80%;
   max-width: 350px;
   min-width: 300px;
+  height: 250px;
   border-radius: 24px;
   padding: 1rem;
   background-color: #000000e6;
@@ -25,6 +26,9 @@ body {
 .card {
   width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .city {
@@ -97,4 +101,71 @@ body {
 .humidity-data::after {
   position: absolute;
   content: "%";
+}
+
+.loading {
+  display: none;
+}
+
+.load-card {
+  display: none;
+}
+
+.load-card.loading {
+  display: block;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.load-card * {
+  border-radius: 24px;
+  background: linear-gradient(
+    120deg,
+    #1e1e1e 30%,
+    #363636 38%,
+    #363636 40%,
+    #1e1e1e 48%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  animation: load 1.5s infinite;
+}
+
+@keyframes load {
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+.load-title {
+  height: 34px;
+  width: 60%;
+  margin: 0 auto 0.2rem;
+}
+
+.load-temp {
+  height: 58px;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.load-desc {
+  height: 23px;
+  width: 35%;
+  margin: 0.2rem auto;
+}
+
+.load-amp {
+  height: 23px;
+  width: 40%;
+  margin: 0 auto 0.5rem;
+}
+
+.load-hum {
+  height: 23px;
+  width: 40%;
+  margin: 0 auto;
 }

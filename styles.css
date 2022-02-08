@@ -22,6 +22,11 @@ body {
   color: #f2f2f2;
 }
 
+.card {
+  width: 100%;
+  height: 100%;
+}
+
 .city {
   text-align: center;
   text-transform: capitalize;
@@ -52,9 +57,44 @@ body {
   margin: 0 auto 0.5rem;
   display: flex;
   justify-content: space-evenly;
+  text-transform: capitalize;
+}
+
+.amp-max {
+  margin-right: 0.2rem;
+}
+
+.amp-min {
+  margin-left: 0.2rem;
+}
+
+.temp-max {
+  position: relative;
+}
+
+.temp-max::after {
+  position: absolute;
+  content: "°";
+}
+
+.temp-min {
+  position: relative;
+}
+.temp-min::after {
+  position: absolute;
+  content: "°";
 }
 
 .humidity {
   text-align: center;
   text-transform: capitalize;
+}
+
+.humidity-data {
+  position: relative;
+}
+
+.humidity-data::after {
+  position: absolute;
+  content: "%";
 }

@@ -11,14 +11,25 @@
   </head>
   <body>
     <div class="main-content">
-      <h2 class="city">city name</h2>
-      <h2 class="temp-current">00</h2>
-      <h2 class="cond-current">conditions</h2>
-      <div class="thermal-amp">
-        <p class="temp-high">H:00&deg;</p>
-        <p class="temp-low">L:00&deg;</p>
+      <div class="card loading">
+        <h2 class="city"></h2>
+        <h2 class="temp-current"></h2>
+        <h2 class="cond-current"></h2>
+        <div class="thermal-amp">
+          <p class="amp-max">
+            h:
+            <span class="temp-max"></span>
+          </p>
+          <p class="amp-min">
+            l:
+            <span class="temp-min"></span>
+          </p>
+        </div>
+        <p class="humidity">
+          humidity:
+          <span class="humidity-data"></span>
+        </p>
       </div>
-      <p class="humidity">humidity: 00&percnt;</p>
     </div>
   </body>
 </html>

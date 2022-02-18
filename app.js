@@ -30,7 +30,6 @@ let weaherApi = {
 const geocode = {
   reverseGeocode: (latitude, longitude) => {
     var api_key = "fd84533b87dd4e7f9341e370188d1f1b";
-
     var api_url = "https://api.opencagedata.com/geocode/v1/json";
 
     var request_url =
@@ -43,17 +42,23 @@ const geocode = {
       "&pretty=1" +
       "&no_annotations=1";
 
+    // see full list of required and optional parameters:
+    // https://opencagedata.com/api#forward
+
     var request = new XMLHttpRequest();
     request.open("GET", request_url, true);
 
     request.onload = function () {
+      // see full list of possible response codes:
+      // https://opencagedata.com/api#codes
+
       if (request.status === 200) {
-        // SUCCESS
-        var data = JSON.parse(request.responseText);
+        // Success!
         console.log("reverseGeocode | " + data.results[0].components.suburb); // PRINT LOCATION SUBURB
         weaherApi.fetchWeather(data.results[0].components.suburb);
       } else if (request.status <= 500) {
-        //ERROR
+        // We reached our target server, but it returned an error
+
         console.log("unable to geocode! Response code: " + request.status);
         var data = JSON.parse(request.responseText);
         console.log("error msg: " + data.status.message);
@@ -63,11 +68,11 @@ const geocode = {
     };
 
     request.onerror = function () {
-      // CONNECTION ERROR
+      // There was a connection error of some sort
       console.log("unable to connect to server");
     };
 
-    request.send(); // MAKE REQUEST
+    request.send(); // make the request
   },
 
   getLocation: () => {

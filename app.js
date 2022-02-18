@@ -49,7 +49,7 @@ const geocode = {
           data.coords.longitude
       );
     };
-    navigator.geolocation.getCurrentPosition(success, console.log(geoerror));
+    navigator.geolocation.getCurrentPosition(success, console.error);
   },
 };
 

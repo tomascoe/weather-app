@@ -80,7 +80,7 @@ const geocode = {
           data.coords.longitude
       );
     };
-    navigator.geolocation.getCurrentPosition(success, console.error);
+    navigator.geolocation.getCurrentPosition(success, console.log(geoerror));
   },
 };
 

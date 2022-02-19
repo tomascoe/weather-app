@@ -32,8 +32,12 @@ const geocode = {
     const res = await fetch(
       `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
     );
+    if (!res.ok) {
+      throw new Error("City not found");
+    }
     const data = await res.json();
     console.log(data);
+    weaherApi.fetchWeather(data.locality);
   },
   getLocation: () => {
     let success = (data) => {

@@ -29,16 +29,12 @@ let weaherApi = {
 
 const geocode = {
   reverseGeocode: async function (latitude, longitude) {
-    const geocodeKey = "AIzaSyBVOoSLlkW2Y5uSoNPl5MBR7gd4BkH7VDQ";
-    let geocodeUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${geocodeKey}`;
-    const res = await fetch(geocodeUrl);
-    if (!res.ok) {
-      throw new Error("Reverse Geolocation not working");
-    }
+    const res = await fetch(
+      `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en`
+    );
     const data = await res.json();
     console.log(data);
   },
-
   getLocation: () => {
     let success = (data) => {
       geocode.reverseGeocode(data.coords.latitude, data.coords.longitude);
